@@ -41,5 +41,6 @@ secondLanagauge.replaceWith(newLi)
 
 const Lanagauge = document.querySelector("li:nth-child(2)")
 Lanagauge.remove()
+newLi.remove()
 </script>
 </html>
