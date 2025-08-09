@@ -39,6 +39,7 @@ const newLi = document.createElement('li')
 newLi.textContent = "mojo"
 secondLanagauge.replaceWith(newLi)
 
-
+const Lanagauge = document.querySelector("li:nth-child(2)")
+Lanagauge.remove()
 </script>
 </html>
