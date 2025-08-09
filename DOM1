@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM last></title>
+</head>
+<body style = "background-color: black; color: aliceblue;">
+    <ul class="unorderedlist">
+        <li class="list-element">one</li>
+        <li class="list-element">two</li>
+        <li class="list-element">three</li>
+        <li class="list-element">four</li>
+    </ul>
+</body>
+
+<script>
+
+    function Addlang (langName){
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.unorderedlist').appendChild(li)
+
+    } 
+
+    function addOptiLangauge (langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.langauge').appendChild(li)
+    }
+    
+addOptiLangauge("go langauge")
+
+
+//edit 
+
+const secondLanagauge = document.querySelector("li:nth-child(2)")
+const newLi = document.createElement('li') 
+newLi.textContent = "mojo"
+secondLanagauge.replaceWith(newLi)
+
+
+</script>
+</html>
