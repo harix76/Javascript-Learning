@@ -1,0 +1,30 @@
+// Function that greets a user after simulating a delay
+// 'name' = the user's name
+// 'callback' = a function to run AFTER the greeting
+function greetUser(name, callback) {
+  
+  // Step 1: Log that we're starting to get the data
+  console.log("Fetching user data...");
+
+  // Step 2: Simulate an asynchronous task using setTimeout
+  // (like waiting for a server to respond)
+  setTimeout(() => {
+    
+    // Step 3: Once the delay is over, greet the user
+    console.log(`Hello, ${name}`);
+
+    // Step 4: Run the callback function passed in
+    // This happens after the greeting
+    callback();
+
+  }, 2000); // Delay of 2000ms (2 seconds)
+}
+
+// Call the greetUser function
+// Pass 'Ali' as the name
+// Pass an anonymous function as the callback
+greetUser("Ali", function() {
+  
+  // This code runs only after the greeting is done
+  console.log("Welcome to the site!");
+});
