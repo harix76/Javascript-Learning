@@ -10,21 +10,84 @@
     <button id="stop">
 Stop
     </button>
+    <button id="start">
+Start
+    </button>
 </body>
 <script>
 
-    const harisName = function (){
-        console.log("haris ka nam"); 
-    }
-   const changeText= function () {
-    document.querySelector('h1').innerHTML = "best JS Series"
-   } 
-const changeme = setTimeout(changeText, 5000)
-document.querySelector('#stop').addEventListener('click', function(){
- clearTimeout(changeme)
- console.log("button is pressed and function is stopped")
-})
+//     const harisName = function (){
+//         console.log("haris ka nam"); 
+//     }
+//    const changeText= function () {
+//     document.querySelector('h1').innerHTML = "best JS Series"
+//    } 
+// const changeme = setTimeout(changeText, 5000)
+// document.querySelector('#stop').addEventListener('click', function(){
+//  clearTimeout(changeme)
+//  console.log("button is pressed and function is stopped")
+// })
 
+// let timerId; // store interval ID here
+
+// document.querySelector('#start').addEventListener('click', function () {
+//   // prevent multiple intervals if already running
+//   if (!timerId) {
+//     timerId = setInterval(function () {
+//       console.log(new Date().toLocaleTimeString());
+//     }, 1000);
+//   }
+// });
+
+// document.querySelector('#stop').addEventListener('click', function () {
+//   clearInterval(timerId); // stop the interval
+//   timerId = null; // reset, so it can be started again
+// });
+
+
+
+//colour chnage backgorund
+
+//generate random color
+const randomColor = function(){
+    const hex = "0123456789ABCDEF"
+    let color = '#';
+    for(let i = 0 ; i<6 ; i++){
+        color += hex [Math.floor(Math.random()*16)]
+    }
+    return color;
+}
+console.log(randomColor());
+let intervalId
+const startChangingColor = function (){
+    if(!intervalId){
+intervalId =  setInterval(bgColor, 1000)
+    }
+   
+    function bgColor () { document.body.style.backgroundColor = randomColor();
+   }};
+
+const stopChangingColor = function(){
+clearInterval(intervalId)
+intervalId = null; 
+}
+
+document.querySelector('#start').addEventListener('click', startChangingColor)
+document.querySelector('#stop').addEventListener('click', stopChangingColor)
+
+// document.querySelector('#start').addEventListener('click', function () {
+//   // prevent multiple intervals if already running
+//   if (!timerId) {
+//     timerId = setInterval(function () {
+//       console.log(new Date().toLocaleTimeString());
+//     }, 1000);
+//   }
+// });
+
+// document.querySelector('#stop').addEventListener('click', function () {
+//   clearInterval(timerId); // stop the interval
+//   timerId = null; // reset, so it can be started again
+// });
 
 </script>
 </html>
